@@ -1,0 +1,33 @@
+<% provide(:title, 'Home')%>
+<%= javascript_include_tag "home" %>
+
+<div class = "row">
+	<div class="container-fluid">
+	<div class = "col-md-6 col-md-offset-3">
+		<div class = "info-box">
+			<h2> Hello, I am Dinorah</h2>
+			<p> Computer Science undergrad at University of California, Irvine </p>
+			<p> Gates Millennium Scholar </p>
+			<p> Fluent in: Spanish, English, <code>Java, Python, Ruby on Rails</code>  
+				[working on C++, JavaScript]</p>
+			<p> I specially like data mining, web dev, and informatics </p>
+		    <p id = "trope"> >> This is what my friends think I do when I'm coding. Coincidentally, how I would look as
+			 a 90s movie hacker 
+			</p> 
+		         
+		         <div id = "modalImage">
+					<div id = "me"> <%= image_tag('hacker.png', size: "600") %> </div>
+					<p id = "caption"> Totally, broke into the mainframe and the firewall. Woo! Hack all the servers! </p>
+				</div>
+			
+		   <p> Oh, and I'm from Puerto Rico but currently living in California</p>
+		</div>
+		
+	        
+		    <%= link_to find_path, :class => 'next' do%>
+		    <i class="glyphicon glyphicon-chevron-down"></i> Code
+		    <%end%>
+		
+	</div>
+	</div>
+</div>
