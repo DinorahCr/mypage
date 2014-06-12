@@ -1,0 +1,322 @@
+// Place all the styles related to the MyPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// ease ease-in ease-out/in-out  cubic-bezier(n,n,n,n) 0-1 vals
+//-webkit-transition-timing-function: linear;
+//transition-timing-function: linear;
+// /* Safari and Chrome */
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+$lightGray: #999;
+$gray: #555;
+$grayDarker: #222;
+$orange: #ff4f00;
+$whiteSmoke: #f5f5f5;
+$hackerGreen: #00c100;
+$gris: #eaeaea;
+
+
+@mixin b-shadow($shadows...){
+	-moz-box-shadow: $shadows;
+	-webkit-box-shadow: $shadows;
+  	box-shadow: $shadows;
+
+}
+
+@mixin back($ground){
+background-image: url($ground);
+background-position: 50% 45px;
+background-repeat: repeat;
+background-size: cover;
+animation: appear 3s ease 0 1; 
+-webkit-animation: appear 3s ease 0 1;
+}
+
+
+@mixin circle($radius, $h, $w){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+	height: $h;
+	width: $w;
+	background-size: cover;
+	animation: appear 3s ease 0 1; 
+	-webkit-animation: appear 3s ease 0 1; 
+}
+
+@keyframes appear{
+	from {opacity: 0.0;}
+	to {opacity: 1.0;}
+}
+
+@-webkit-keyframes appear{
+	from {opacity: 0.0;}
+	to {opacity: 1.0;}
+}
+
+html {
+	overflow-y: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+body {
+	padding-top: 60px;
+	@include back('h3-120.jpg');
+}
+
+
+
+.navbar-inverse{
+     opacity: 0.8;
+	.navbar-nav{
+      	padding-left:30px;
+	  	font-size: 15px;
+	  	font-family: 'Raleway', serif;
+	  	letter-spacing: 1px;
+	    font-weight: normal;
+	  	line-height: 1;
+	 
+		li{
+			a{
+				color:$orange;
+				&:hover{ color: $whiteSmoke; }
+			}
+		}	 
+	}
+}
+
+.info-box{
+ 	margin-top: 150px;
+    border: thick groove $grayDarker;
+	border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 800px;
+	height: 300px; 
+	font-style: normal;
+	font-weight: normal;
+	
+	code{
+		color: $orange;
+	}
+	
+	h2{
+		font-size: 35px;  
+		color: $whiteSmoke;
+		letter-spacing:2px;
+		line-height: 30px;
+	}
+   
+   p{
+	 font-size: 15px;
+	 color: white;
+	 padding-left: 10px;
+	 padding-right: 10px;
+	 letter-spacing:1.5px;
+     
+   }
+    
+}
+
+
+
+#trope{
+	&:hover {
+		color: $orange;
+		cursor:pointer;
+  	}
+
+}
+
+#modalImage{
+	display: none;
+	position: absolute;
+	left:10%;
+	top: 0px;
+	width: 70%;
+	height: 100%;	
+	z-index: 1;
+   
+	div{
+        @include b-shadow(10px 10px 5px 160px rgba(0,0,0, 0.90));
+		background-color: black;
+		cursor: pointer; 
+		@include transition(all 0.4s ease);
+   	}
+
+	#caption{
+		caption-side: bottom;
+		color: $hackerGreen;
+		text-size: 15px;
+		padding: 5px;
+	}
+		
+}
+
+
+.findMe{
+	position: absolute;
+	overflow: hidden;
+	bottom: 25px;
+	top: 50px;
+	width: 100%;
+	z-index: 1;
+    background-color: $gris;
+    
+
+	#main{
+		position: absolute;
+		left: 50%;
+		top: 20%;
+		background-image: url('icon.png');
+		border: 3px solid $orange;
+		@include circle(50%, 200px, 200px);	
+		
+		.icon{
+		    left: -60%;
+		    position: relative;
+		    margin: 2em;
+		    top: -3em;
+	 	    a{     
+	 			
+				&:hover{
+					cursor: pointer;
+					background: transparent;
+					
+				} 
+	   	    }	
+		
+			img{	    
+	            @include circle(50%, 70px, 70px);
+				padding: 5px;
+				border: 4px outset $whiteSmoke;
+				margin: 5px;
+				
+				&:hover{
+				 @include b-shadow(0px 0px 5px 5px $orange);
+		  		} 
+		   }
+	   }
+  }
+	
+}
+
+section {
+	overflow: auto;
+}
+
+textarea{
+	resize: vertical;
+
+}
+
+.center{
+	text-align: center;
+}
+
+/* typography */
+
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-family: Baskerville, Helvetica, Serif;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+ 
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+}
+
+p {
+  font-family: Baskerville, Serif, Helvetica;
+  font-size: 1.3em;
+  line-height: 1.7em;
+  text-align: justify;
+  color: #666;
+  
+}
+
+a{
+	
+	color: black;
+
+	&:hover{
+		color: $whiteSmoke;
+		text-decoration: none;
+		font-size: 15px;
+	}
+	
+
+}
+
+.next{
+	 left: 50%;
+	 top: auto;
+	 position: fixed;
+	 bottom: 30px;
+	 height: 20px;
+	 cursor: pointer;
+	
+	a{
+		color: black;
+		&:hover{
+			color: $whiteSmoke;
+			text-decoration: none;
+			font-size: 15px;
+		}
+
+	}
+}
+
+footer {
+  height: 25px;
+  width: 100%; 
+  position: fixed;
+  top: auto;
+  left: 0px;
+  bottom: 0px;
+  padding-top: 5px;
+  border-top: 5px solid $orange;
+  background-color: $orange;
+  font-size: 8px; 
+  font-weight: bold;
+  
+  a {
+  	color: white;
+  	&:hover {
+		color: $grayDarker;
+  	}
+  }			
+  small{
+ 	float: left;
+    margin-left: 5px;
+    line-height: 0.1px;
+    padding-left: 2px;
+    color: $whiteSmoke;
+    
+  }
+
+  ul {
+  	float: right;
+  	list-style: none;
+	li {
+		float: left;
+		margin-left: 10px;
+		color: black;
+	}
+  }
+
+}
