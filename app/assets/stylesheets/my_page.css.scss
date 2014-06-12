@@ -64,7 +64,11 @@ html {
 
 body {
 	padding-top: 60px;
-	@include back('h3-120.jpg');
+	color: $gris;
+	background-image: url('h3-120.jpg');
+	background-position: 50% 45px;
+	background-repeat: repeat;
+	background-size: cover;
 }
 
 
@@ -107,15 +111,16 @@ body {
 		color: $whiteSmoke;
 		letter-spacing:2px;
 		line-height: 30px;
+		font-family: 'Raleway', serif;
 	}
    
    p{
-	 font-size: 15px;
+	 font-size: 16px;
 	 color: white;
 	 padding-left: 10px;
 	 padding-right: 10px;
 	 letter-spacing:1.5px;
-     
+     font-family: 'Raleway', serif;
    }
     
 }
@@ -164,7 +169,8 @@ body {
 	width: 100%;
 	z-index: 1;
     background-color: $gris;
-    
+    animation: appear 3s ease 0 1; 
+	-webkit-animation: appear 3s ease 0 1;
 
 	#main{
 		position: absolute;
@@ -236,7 +242,7 @@ h2 {
   font-size: 1.8em;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: bold;
+  font-weight: normal;
   color: #666;
 }
 
@@ -262,7 +268,7 @@ a{
 
 }
 
-.next{
+next{
 	 left: 50%;
 	 top: auto;
 	 position: fixed;
@@ -273,8 +279,9 @@ a{
 	a{
 		color: black;
 		&:hover{
-			color: $whiteSmoke;
+			color: $orange;
 			text-decoration: none;
+			background: transparent;
 			font-size: 15px;
 		}
 
