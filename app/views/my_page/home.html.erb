@@ -1,6 +1,5 @@
 <% provide(:title, 'Home')%>
 <%= javascript_include_tag "home" %>
-
 <div class = "row">
 	<div class="container-fluid">
 	<div class = "col-md-6 col-md-offset-3">
@@ -24,9 +23,8 @@
 		</div>
 		
 	        <next>
-		    <%= link_to find_path do%>
-		    <span class="glyphicon glyphicon-chevron-down">Code</span> 
-		    <%end%>
+			<%= link_to 'Code', find_path%> 
+		    <span class="glyphicon glyphicon-chevron-down" style = "color:black"></span> 
 			</next>
 		
 	</div>
