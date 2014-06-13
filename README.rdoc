@@ -1,3 +1,5 @@
 Personal webpage. Currently, working on adding a Post page. 
 
 Sass, unobtrusive javascript, Ruby on Rails. 
+
+Currently hosten on http://dinorah.herokuapp.com/
